@@ -1,0 +1,12 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const PeopleRoutes = require("./routes/people");
+const mysqlConnection = require("./routes/connection");
+
+var app = express();
+app.use(bodyParser.json());
+
+app.use("/people", PeopleRoutes);
+
+app.listen(3001);
